@@ -7,7 +7,8 @@ import {
   Layers, 
   ShieldAlert, 
   UserPlus, 
-  Flame 
+  Flame,
+  Globe
 } from 'lucide-react';
 import type { GameScreen, GameSettings } from '../types/game';
 
@@ -15,6 +16,7 @@ interface HomeScreenProps {
   onNavigate: (screen: GameScreen) => void;
   onStartQuickGame: () => void;
   onOpenHowToPlay: () => void;
+  onOpenMultiplayer: () => void;
   settings: GameSettings;
   playerCount: number;
 }
@@ -23,6 +25,7 @@ export const HomeScreen = ({
   onNavigate,
   onStartQuickGame,
   onOpenHowToPlay,
+  onOpenMultiplayer,
   settings,
   playerCount,
 }: HomeScreenProps) => {
@@ -85,12 +88,22 @@ export const HomeScreen = ({
 
       {/* Main Action Buttons */}
       <div className="flex flex-col gap-3 w-full">
+        {/* Pass & Play */}
         <button
           onClick={onStartQuickGame}
           className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rose-500 via-purple-600 to-indigo-600 text-white font-bold text-lg shadow-xl shadow-purple-600/30 hover:shadow-purple-600/50 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3 border border-white/20"
         >
           <Play className="w-6 h-6 fill-current" />
-          <span>START GAME</span>
+          <span>PASS & PLAY (1 PHONE)</span>
+        </button>
+
+        {/* Online Multiplayer with Link/QR */}
+        <button
+          onClick={onOpenMultiplayer}
+          className="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-indigo-900/90 via-slate-800 to-indigo-950/90 hover:border-indigo-500/80 text-white font-bold text-base shadow-lg border border-indigo-500/40 hover:scale-[1.01] active:scale-[0.98] transition-all flex items-center justify-center gap-2.5"
+        >
+          <Globe className="w-5 h-5 text-indigo-400" />
+          <span>MULTIPLAYER (INVITE VIA LINK)</span>
         </button>
 
         <div className="grid grid-cols-2 gap-3">

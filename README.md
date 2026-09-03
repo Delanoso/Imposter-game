@@ -6,6 +6,7 @@ A high-polish, feature-rich web duplicate of the viral **Imposter** party game a
 
 ## ✨ Features
 
+- 🌐 **Online Multiplayer (Play on Own Phones)**: Create a room, share a link / QR code, and play synchronized rounds across everyone's personal devices with real-time Socket.io state sync!
 - 🎮 **Pass & Play (1 Phone, 3-20 Players)**: Seamless local party play designed specifically for group game nights.
 - 🎭 **Multiple Game Modes**:
   - **Classic**: Imposter receives no secret word and must bluff blindly.

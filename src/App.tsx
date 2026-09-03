@@ -1,4 +1,7 @@
+import { useState, useEffect } from 'react';
 import { useGameEngine } from './hooks/useGameEngine';
+import { useMultiplayerRoom } from './hooks/useMultiplayerRoom';
+
 import { HomeScreen } from './components/HomeScreen';
 import { SetupScreen } from './components/SetupScreen';
 import { CategorySelectScreen } from './components/CategorySelectScreen';
@@ -9,6 +12,13 @@ import { VotingScreen } from './components/VotingScreen';
 import { ResultsScreen } from './components/ResultsScreen';
 import { LeaderboardScreen } from './components/LeaderboardScreen';
 import { HowToPlayModal } from './components/HowToPlayModal';
+
+import { MultiplayerJoinModal } from './components/MultiplayerJoinModal';
+import { MultiplayerLobby } from './components/MultiplayerLobby';
+import { MultiplayerRoleReveal } from './components/MultiplayerRoleReveal';
+import { MultiplayerCluesScreen } from './components/MultiplayerCluesScreen';
+import { MultiplayerVotingScreen } from './components/MultiplayerVotingScreen';
+import { MultiplayerResultsScreen } from './components/MultiplayerResultsScreen';
 
 export function App() {
   const {
@@ -42,6 +52,45 @@ export function App() {
     setShowHowToPlayModal,
   } = useGameEngine();
 
+  // Multiplayer Hook
+  const {
+    roomState,
+    localPlayerId,
+    localPlayer,
+    isHost,
+    errorMessage,
+    setErrorMessage,
+    selectedVoteId,
+    setSelectedVoteId,
+    createRoom,
+    joinRoom,
+    updateSettings: updateRoomSettings,
+    toggleReady,
+    startRound: startMultiplayerRound,
+    markCardViewed,
+    advanceToClues,
+    toggleTimer: toggleMultiTimer,
+    resetTimer: resetMultiTimer,
+    startVoting: startMultiVoting,
+    castVote,
+    submitGroupDecision,
+    submitImposterGuess,
+    leaveRoom
+  } = useMultiplayerRoom();
+
+  const [showMultiJoinModal, setShowMultiJoinModal] = useState(false);
+  const [initialRoomCode, setInitialRoomCode] = useState('');
+
+  // Auto detect ?room=ABCD query param from invite link
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const roomParam = urlParams.get('room');
+    if (roomParam) {
+      setInitialRoomCode(roomParam.toUpperCase());
+      setShowMultiJoinModal(true);
+    }
+  }, []);
+
   const handleToggleCategory = (id: string) => {
     const current = settings.selectedCategoryIds;
     if (current.includes(id)) {
@@ -61,6 +110,74 @@ export function App() {
     }
   };
 
+  // -------------------------------------------------------------
+  // ONLINE MULTIPLAYER RENDER BRANCH
+  // -------------------------------------------------------------
+  if (roomState && localPlayer && localPlayerId) {
+    return (
+      <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-purple-500 selection:text-white">
+        {roomState.phase === 'lobby' && (
+          <MultiplayerLobby
+            roomState={roomState}
+            localPlayerId={localPlayerId}
+            isHost={isHost}
+            onUpdateSettings={updateRoomSettings}
+            onToggleReady={toggleReady}
+            onStartGame={startMultiplayerRound}
+            onLeaveRoom={leaveRoom}
+          />
+        )}
+
+        {roomState.phase === 'role-reveal' && (
+          <MultiplayerRoleReveal
+            roomState={roomState}
+            localPlayer={localPlayer}
+            isHost={isHost}
+            onCardViewed={markCardViewed}
+            onAdvanceToClues={advanceToClues}
+          />
+        )}
+
+        {roomState.phase === 'clues' && (
+          <MultiplayerCluesScreen
+            roomState={roomState}
+            localPlayer={localPlayer}
+            isHost={isHost}
+            onToggleTimer={toggleMultiTimer}
+            onResetTimer={resetMultiTimer}
+            onStartVoting={startMultiVoting}
+          />
+        )}
+
+        {roomState.phase === 'voting' && (
+          <MultiplayerVotingScreen
+            roomState={roomState}
+            localPlayer={localPlayer}
+            isHost={isHost}
+            selectedTargetId={selectedVoteId}
+            onSelectTarget={setSelectedVoteId}
+            onSubmitVote={castVote}
+            onSubmitGroupDecision={submitGroupDecision}
+          />
+        )}
+
+        {roomState.phase === 'results' && (
+          <MultiplayerResultsScreen
+            roomState={roomState}
+            localPlayer={localPlayer}
+            isHost={isHost}
+            onPlayNextRound={startMultiplayerRound}
+            onLeaveRoom={leaveRoom}
+            onImposterGuess={submitImposterGuess}
+          />
+        )}
+      </div>
+    );
+  }
+
+  // -------------------------------------------------------------
+  // SINGLE PHONE PASS & PLAY RENDER BRANCH
+  // -------------------------------------------------------------
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-purple-500 selection:text-white">
       {/* Dynamic Screen View */}
@@ -69,6 +186,7 @@ export function App() {
           onNavigate={(scr) => setScreen(scr)}
           onStartQuickGame={startNewRound}
           onOpenHowToPlay={() => setShowHowToPlayModal(true)}
+          onOpenMultiplayer={() => setShowMultiJoinModal(true)}
           settings={settings}
           playerCount={players.length}
         />
@@ -163,6 +281,32 @@ export function App() {
       {/* Rules / How to play modal */}
       {showHowToPlayModal && (
         <HowToPlayModal onClose={() => setShowHowToPlayModal(false)} />
+      )}
+
+      {/* Multiplayer Join / Create Modal */}
+      {showMultiJoinModal && (
+        <MultiplayerJoinModal
+          initialRoomCode={initialRoomCode}
+          onJoin={(code, name, avatar) => {
+            joinRoom(code, name, avatar);
+            setShowMultiJoinModal(false);
+          }}
+          onCreate={(name, avatar) => {
+            createRoom(name, avatar);
+            setShowMultiJoinModal(false);
+          }}
+          onClose={() => setShowMultiJoinModal(false)}
+        />
+      )}
+
+      {/* Error alert toast */}
+      {errorMessage && (
+        <div className="fixed top-4 left-4 right-4 max-w-md mx-auto z-50 bg-rose-600 text-white text-xs font-bold px-4 py-3 rounded-2xl shadow-2xl flex items-center justify-between animate-bounce">
+          <span>{errorMessage}</span>
+          <button onClick={() => setErrorMessage(null)} className="ml-2 p-1 font-black">
+            ✕
+          </button>
+        </div>
       )}
     </div>
   );
