@@ -27,11 +27,8 @@ export const RoleRevealScreen = ({
 
   const handleToggleReveal = () => {
     if (!isRevealed) {
-      if (isImposter) {
-        soundFx.playImposterReveal();
-      } else {
-        soundFx.playReveal();
-      }
+      // Play identical reveal sound so other players listening cannot deduce who the imposter is
+      soundFx.playReveal();
     } else {
       soundFx.playClick();
     }
