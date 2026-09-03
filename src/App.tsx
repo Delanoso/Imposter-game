@@ -1,0 +1,171 @@
+import { useGameEngine } from './hooks/useGameEngine';
+import { HomeScreen } from './components/HomeScreen';
+import { SetupScreen } from './components/SetupScreen';
+import { CategorySelectScreen } from './components/CategorySelectScreen';
+import { PassScreen } from './components/PassScreen';
+import { RoleRevealScreen } from './components/RoleRevealScreen';
+import { DiscussionCluesScreen } from './components/DiscussionCluesScreen';
+import { VotingScreen } from './components/VotingScreen';
+import { ResultsScreen } from './components/ResultsScreen';
+import { LeaderboardScreen } from './components/LeaderboardScreen';
+import { HowToPlayModal } from './components/HowToPlayModal';
+
+export function App() {
+  const {
+    screen,
+    setScreen,
+    settings,
+    updateSettings,
+    players,
+    handleSetPlayerCount,
+    updatePlayerName,
+    updatePlayerAvatar,
+    allCategories,
+    addCustomCategory,
+    removeCustomCategory,
+    activeRound,
+    startNewRound,
+    onCardRevealAcknowledge,
+    timerSecondsLeft,
+    setTimerSecondsLeft,
+    isTimerRunning,
+    setIsTimerRunning,
+    startVotingPhase,
+    votingTurnIndex,
+    selectedVotePlayerId,
+    setSelectedVotePlayerId,
+    submitCurrentVote,
+    skipToGroupDecision,
+    handleImposterGuessWord,
+    resetAllScores,
+    showHowToPlayModal,
+    setShowHowToPlayModal,
+  } = useGameEngine();
+
+  const handleToggleCategory = (id: string) => {
+    const current = settings.selectedCategoryIds;
+    if (current.includes(id)) {
+      if (current.length > 1) {
+        updateSettings({ selectedCategoryIds: current.filter(cid => cid !== id) });
+      }
+    } else {
+      updateSettings({ selectedCategoryIds: [...current, id] });
+    }
+  };
+
+  const handleSelectAllCategories = () => {
+    if (settings.selectedCategoryIds.length === allCategories.length) {
+      updateSettings({ selectedCategoryIds: [allCategories[0].id] });
+    } else {
+      updateSettings({ selectedCategoryIds: allCategories.map(c => c.id) });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-purple-500 selection:text-white">
+      {/* Dynamic Screen View */}
+      {screen === 'home' && (
+        <HomeScreen
+          onNavigate={(scr) => setScreen(scr)}
+          onStartQuickGame={startNewRound}
+          onOpenHowToPlay={() => setShowHowToPlayModal(true)}
+          settings={settings}
+          playerCount={players.length}
+        />
+      )}
+
+      {screen === 'setup' && (
+        <SetupScreen
+          settings={settings}
+          onUpdateSettings={updateSettings}
+          players={players}
+          onSetPlayerCount={handleSetPlayerCount}
+          onUpdatePlayerName={updatePlayerName}
+          onUpdatePlayerAvatar={updatePlayerAvatar}
+          onBack={() => setScreen('home')}
+          onStartGame={startNewRound}
+        />
+      )}
+
+      {screen === 'category-select' && (
+        <CategorySelectScreen
+          categories={allCategories}
+          selectedIds={settings.selectedCategoryIds}
+          onToggleCategory={handleToggleCategory}
+          onSelectAll={handleSelectAllCategories}
+          onAddCustomCategory={addCustomCategory}
+          onRemoveCustomCategory={removeCustomCategory}
+          onBack={() => setScreen('home')}
+        />
+      )}
+
+      {screen === 'pass-screen' && activeRound && (
+        <PassScreen
+          player={activeRound.players[activeRound.currentPlayerRevealIndex]}
+          playerIndex={activeRound.currentPlayerRevealIndex}
+          totalPlayers={activeRound.players.length}
+          categoryName={activeRound.categoryName}
+          onReadyToReveal={() => setScreen('role-reveal')}
+        />
+      )}
+
+      {screen === 'role-reveal' && activeRound && (
+        <RoleRevealScreen
+          player={activeRound.players[activeRound.currentPlayerRevealIndex]}
+          categoryName={activeRound.categoryName}
+          onNext={onCardRevealAcknowledge}
+          isLastPlayer={activeRound.currentPlayerRevealIndex === activeRound.players.length - 1}
+        />
+      )}
+
+      {screen === 'discussion-clues' && activeRound && (
+        <DiscussionCluesScreen
+          categoryName={activeRound.categoryName}
+          players={activeRound.players}
+          firstPlayerIndex={activeRound.firstPlayerIndex}
+          timerSecondsLeft={timerSecondsLeft}
+          isTimerRunning={isTimerRunning}
+          onToggleTimer={() => setIsTimerRunning(!isTimerRunning)}
+          onResetTimer={() => setTimerSecondsLeft(settings.discussionTimeSeconds || 60)}
+          onProceedToVoting={startVotingPhase}
+        />
+      )}
+
+      {screen === 'voting' && activeRound && (
+        <VotingScreen
+          players={activeRound.players}
+          currentVoterIndex={votingTurnIndex}
+          selectedTargetId={selectedVotePlayerId}
+          onSelectTarget={(id) => setSelectedVotePlayerId(id)}
+          onSubmitVote={submitCurrentVote}
+          onSkipToGroupDecision={skipToGroupDecision}
+        />
+      )}
+
+      {screen === 'results' && activeRound && (
+        <ResultsScreen
+          roundData={activeRound}
+          onPlayNextRound={startNewRound}
+          onGoHome={() => setScreen('home')}
+          onOpenLeaderboard={() => setScreen('leaderboard')}
+          onImposterGuess={handleImposterGuessWord}
+        />
+      )}
+
+      {screen === 'leaderboard' && (
+        <LeaderboardScreen
+          players={players}
+          onResetScores={resetAllScores}
+          onBack={() => setScreen('home')}
+        />
+      )}
+
+      {/* Rules / How to play modal */}
+      {showHowToPlayModal && (
+        <HowToPlayModal onClose={() => setShowHowToPlayModal(false)} />
+      )}
+    </div>
+  );
+}
+
+export default App;
