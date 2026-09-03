@@ -12,6 +12,7 @@ import { VotingScreen } from './components/VotingScreen';
 import { ResultsScreen } from './components/ResultsScreen';
 import { LeaderboardScreen } from './components/LeaderboardScreen';
 import { HowToPlayModal } from './components/HowToPlayModal';
+import { InstallAppModal } from './components/InstallAppModal';
 
 import { MultiplayerJoinModal } from './components/MultiplayerJoinModal';
 import { MultiplayerLobby } from './components/MultiplayerLobby';
@@ -79,6 +80,7 @@ export function App() {
   } = useMultiplayerRoom();
 
   const [showMultiJoinModal, setShowMultiJoinModal] = useState(false);
+  const [showInstallModal, setShowInstallModal] = useState(false);
   const [initialRoomCode, setInitialRoomCode] = useState('');
 
   // Auto detect ?room=ABCD query param from invite link
@@ -187,6 +189,7 @@ export function App() {
           onStartQuickGame={startNewRound}
           onOpenHowToPlay={() => setShowHowToPlayModal(true)}
           onOpenMultiplayer={() => setShowMultiJoinModal(true)}
+          onOpenInstallModal={() => setShowInstallModal(true)}
           settings={settings}
           playerCount={players.length}
         />
@@ -281,6 +284,11 @@ export function App() {
       {/* Rules / How to play modal */}
       {showHowToPlayModal && (
         <HowToPlayModal onClose={() => setShowHowToPlayModal(false)} />
+      )}
+
+      {/* Install App / PWA Modal */}
+      {showInstallModal && (
+        <InstallAppModal onClose={() => setShowInstallModal(false)} />
       )}
 
       {/* Multiplayer Join / Create Modal */}

@@ -8,7 +8,8 @@ import {
   ShieldAlert, 
   UserPlus, 
   Flame,
-  Globe
+  Globe,
+  Download
 } from 'lucide-react';
 import type { GameScreen, GameSettings } from '../types/game';
 
@@ -17,6 +18,7 @@ interface HomeScreenProps {
   onStartQuickGame: () => void;
   onOpenHowToPlay: () => void;
   onOpenMultiplayer: () => void;
+  onOpenInstallModal: () => void;
   settings: GameSettings;
   playerCount: number;
 }
@@ -26,6 +28,7 @@ export const HomeScreen = ({
   onStartQuickGame,
   onOpenHowToPlay,
   onOpenMultiplayer,
+  onOpenInstallModal,
   settings,
   playerCount,
 }: HomeScreenProps) => {
@@ -41,13 +44,24 @@ export const HomeScreen = ({
           <span>Scores</span>
         </button>
 
-        <button
-          onClick={onOpenHowToPlay}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-slate-300 font-medium text-sm hover:bg-slate-700/80 transition active:scale-95 shadow-sm"
-        >
-          <HelpCircle className="w-4 h-4 text-indigo-400" />
-          <span>Rules</span>
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={onOpenInstallModal}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-indigo-300 font-medium text-sm hover:bg-slate-700/80 transition active:scale-95 shadow-sm"
+            title="Install App"
+          >
+            <Download className="w-4 h-4 text-indigo-400" />
+            <span>Install</span>
+          </button>
+
+          <button
+            onClick={onOpenHowToPlay}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/80 text-slate-300 font-medium text-sm hover:bg-slate-700/80 transition active:scale-95 shadow-sm"
+          >
+            <HelpCircle className="w-4 h-4 text-slate-400" />
+            <span>Rules</span>
+          </button>
+        </div>
       </div>
 
       {/* Hero Branding */}

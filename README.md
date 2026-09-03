@@ -62,6 +62,27 @@ npm run build
 
 ---
 
+## 🌐 100% Free Hosting & Deployment Guide
+
+Because this app includes live **Socket.io** online multiplayer, you can host it for free on:
+
+### Option 1: Render.com (Recommended for Node + WebSocket)
+1. Go to [Render.com](https://render.com) and create a free account.
+2. Click **New +** -> **Web Service** and link your GitHub repo (`Delanoso/Imposter-game`).
+3. Set:
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+4. Deploy! You'll receive a free permanent `https://your-app.onrender.com` link.
+
+### Option 2: Railway / Fly.io
+- Connect repository and run `npm start` with auto HTTPS and WebSocket support.
+
+### 📲 How Users "Download" / Install Free (PWA):
+- **iPhone (iOS Safari)**: Open link -> Tap **Share** (square with up arrow) -> Tap **"Add to Home Screen"**.
+- **Android (Chrome)**: Open link -> Tap **Three Dots (⋮)** -> Tap **"Install app"** or **"Add to Home Screen"**.
+
+---
+
 ## 📖 How to Play
 
 1. **Setup**: Choose player count (3–20), select avatars & names, and choose game mode & categories.
