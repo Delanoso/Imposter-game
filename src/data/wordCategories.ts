@@ -39,7 +39,12 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { civilianWord: 'Nachos', imposterWord: 'Quesadilla', hint: 'Cheesy snack' },
       { civilianWord: 'Cupcake', imposterWord: 'Muffin', hint: 'Individual baked treat' },
       { civilianWord: 'Guacamole', imposterWord: 'Salsa', hint: 'Dip for tortilla chips' },
-      { civilianWord: 'Fried Chicken', imposterWord: 'Chicken Wings', hint: 'Crispy poultry snack' }
+      { civilianWord: 'Fried Chicken', imposterWord: 'Chicken Wings', hint: 'Crispy poultry snack' },
+      { civilianWord: 'Boba Tea', imposterWord: 'Matcha Latte', hint: 'Trendy cafe drink' },
+      { civilianWord: 'French Fries', imposterWord: 'Onion Rings', hint: 'Deep-fried side dish' },
+      { civilianWord: 'Steak', imposterWord: 'Ribs', hint: 'Hearty meat entree' },
+      { civilianWord: 'Churros', imposterWord: 'Cinnamon Roll', hint: 'Cinnamon spiced pastry' },
+      { civilianWord: 'Cocktail', imposterWord: 'Mocktail', hint: 'Mixed party beverage' }
     ]
   },
   {
@@ -67,7 +72,11 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { civilianWord: 'Volcano', imposterWord: 'Geyser', hint: 'Erupting geological feature' },
       { civilianWord: 'Rainforest', imposterWord: 'Jungle', hint: 'Dense tropical biodiversity biome' },
       { civilianWord: 'Waterfall', imposterWord: 'Rapids', hint: 'Cascading rushing water' },
-      { civilianWord: 'Glacier', imposterWord: 'Iceberg', hint: 'Massive frozen ice mass' }
+      { civilianWord: 'Glacier', imposterWord: 'Iceberg', hint: 'Massive frozen ice mass' },
+      { civilianWord: 'Peacock', imposterWord: 'Parrot', hint: 'Colorful feathered bird' },
+      { civilianWord: 'Polar Bear', imposterWord: 'Grizzly Bear', hint: 'Apex Arctic predator' },
+      { civilianWord: 'Crocodile', imposterWord: 'Alligator', hint: 'Armored wetland reptile' },
+      { civilianWord: 'Desert Oasis', imposterWord: 'Mirage', hint: 'Water source in the sands' }
     ]
   },
   {
@@ -91,7 +100,11 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { civilianWord: 'James Bond', imposterWord: 'Mission: Impossible', hint: 'Secret agent espionage thriller' },
       { civilianWord: 'The Matrix', imposterWord: 'Inception', hint: 'Mind-bending simulation thriller' },
       { civilianWord: 'Shrek', imposterWord: 'Monsters, Inc.', hint: 'Beloved animated comedy' },
-      { civilianWord: 'Squid Game', imposterWord: 'The Hunger Games', hint: 'Survival tournament drama' }
+      { civilianWord: 'Squid Game', imposterWord: 'The Hunger Games', hint: 'Survival tournament drama' },
+      { civilianWord: 'Taylor Swift', imposterWord: 'Beyonce', hint: 'Global pop superstar' },
+      { civilianWord: 'Stranger Things', imposterWord: 'Wednesday', hint: 'Hit supernatural TV series' },
+      { civilianWord: 'Zelda', imposterWord: 'Genshin Impact', hint: 'Open-world fantasy adventure' },
+      { civilianWord: 'Iron Man', imposterWord: 'Cyborg', hint: 'Tech-powered armor hero' }
     ]
   },
   {
@@ -116,7 +129,10 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { civilianWord: 'Laptop', imposterWord: 'Desktop PC', hint: 'Portable computer' },
       { civilianWord: 'Coffee Mug', imposterWord: 'Thermos', hint: 'Warm drink cup' },
       { civilianWord: 'Pillow', imposterWord: 'Blanket', hint: 'Bedding for cozy sleep' },
-      { civilianWord: 'Scissors', imposterWord: 'Knife', hint: 'Cutting utensil' }
+      { civilianWord: 'Scissors', imposterWord: 'Knife', hint: 'Cutting utensil' },
+      { civilianWord: 'AirPods', imposterWord: 'Bluetooth Speaker', hint: 'Wireless sound device' },
+      { civilianWord: 'Power Bank', imposterWord: 'Phone Charger', hint: 'Battery charging device' },
+      { civilianWord: 'Water Bottle', imposterWord: 'Flask', hint: 'Hydration container' }
     ]
   },
   {
@@ -136,7 +152,10 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { civilianWord: 'Cinema', imposterWord: 'Theater', hint: 'Screening big-screen shows' },
       { civilianWord: 'Campground', imposterWord: 'Cabin in Woods', hint: 'Outdoor wilderness stay' },
       { civilianWord: 'Casino', imposterWord: 'Arcade', hint: 'Jackpot betting establishment' },
-      { civilianWord: 'Hospital', imposterWord: 'Clinic', hint: 'Emergency medical care facility' }
+      { civilianWord: 'Hospital', imposterWord: 'Clinic', hint: 'Emergency medical care facility' },
+      { civilianWord: 'Times Square', imposterWord: 'Las Vegas Strip', hint: 'Bright neon billboard hub' },
+      { civilianWord: 'Disneyland', imposterWord: 'Universal Studios', hint: 'Iconic theme park kingdom' },
+      { civilianWord: 'Mount Everest', imposterWord: 'Mount Fuji', hint: 'World-famous mountain peak' }
     ]
   },
   {
@@ -154,7 +173,11 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { civilianWord: 'Pirate', imposterWord: 'Sailor', hint: 'Treasure-hunting sea raider' },
       { civilianWord: 'Scientist', imposterWord: 'Professor', hint: 'Lab researcher of discovery' },
       { civilianWord: 'Architect', imposterWord: 'Interior Designer', hint: 'Building blueprint planner' },
-      { civilianWord: 'Journalist', imposterWord: 'Photographer', hint: 'News story reporter' }
+      { civilianWord: 'Journalist', imposterWord: 'Photographer', hint: 'News story reporter' },
+      { civilianWord: 'Life Guard', imposterWord: 'Scuba Diver', hint: 'Pool or beach safety watcher' },
+      { civilianWord: 'Software Engineer', imposterWord: 'Video Game Developer', hint: 'Tech programmer' },
+      { civilianWord: 'Judge', imposterWord: 'Lawyer', hint: 'Courtroom legal authority' },
+      { civilianWord: 'Stand-up Comedian', imposterWord: 'Actor', hint: 'Humorous stage entertainer' }
     ]
   },
   {
@@ -163,6 +186,7 @@ export const DEFAULT_CATEGORIES: Category[] = [
     emoji: '⚽',
     description: 'Athletics, competitive games, and leisure activities',
     words: [
+      { civilianWord: 'Tiger Woods', imposterWord: 'Rory McIlroy', hint: 'Legendary golf champion' },
       { civilianWord: 'Soccer', imposterWord: 'Basketball', hint: 'Global ball-kicking sport' },
       { civilianWord: 'Tennis', imposterWord: 'Badminton', hint: 'Racket net game' },
       { civilianWord: 'Bowling', imposterWord: 'Billiards', hint: 'Pin-knocking lane game' },
@@ -172,7 +196,12 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { civilianWord: 'Guitar', imposterWord: 'Ukulele', hint: 'Strummed string instrument' },
       { civilianWord: 'Yoga', imposterWord: 'Pilates', hint: 'Mindful stretching & pose exercise' },
       { civilianWord: 'Karate', imposterWord: 'Boxing', hint: 'Martial arts discipline' },
-      { civilianWord: 'Gardening', imposterWord: 'Farming', hint: 'Planting flowers and vegetables' }
+      { civilianWord: 'Gardening', imposterWord: 'Farming', hint: 'Planting flowers and vegetables' },
+      { civilianWord: 'Lionel Messi', imposterWord: 'Cristiano Ronaldo', hint: 'GOAT football / soccer superstar' },
+      { civilianWord: 'LeBron James', imposterWord: 'Michael Jordan', hint: 'NBA basketball icon' },
+      { civilianWord: 'Snowboarding', imposterWord: 'Skiing', hint: 'Downhill winter snow sport' },
+      { civilianWord: 'Formula 1', imposterWord: 'NASCAR', hint: 'High-speed motorsport racing' },
+      { civilianWord: 'Swimming', imposterWord: 'Water Polo', hint: 'Pool aquatic competition' }
     ]
   },
   {
@@ -188,7 +217,10 @@ export const DEFAULT_CATEGORIES: Category[] = [
       { civilianWord: 'Limbo', imposterWord: 'Conga Line', hint: 'Low-bar dance party challenge' },
       { civilianWord: 'DJ Booth', imposterWord: 'Dance Floor', hint: 'Heart of the dance club' },
       { civilianWord: 'Midnight Snack', imposterWord: 'Late Night Tacos', hint: 'Post-party 2 AM craving' },
-      { civilianWord: 'Disco Ball', imposterWord: 'Strobe Light', hint: 'Glittering club ceiling fixture' }
+      { civilianWord: 'Disco Ball', imposterWord: 'Strobe Light', hint: 'Glittering club ceiling fixture' },
+      { civilianWord: 'Photobooth', imposterWord: 'Selfie Stick', hint: 'Party picture memory maker' },
+      { civilianWord: 'Piñata', imposterWord: 'Confetti Cannon', hint: 'Party celebration bursting candy or glitter' },
+      { civilianWord: 'Red Carpet', imposterWord: 'VIP Lounge', hint: 'Celebrity exclusive entrance' }
     ]
   }
 ];
