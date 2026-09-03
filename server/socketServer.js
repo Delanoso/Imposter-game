@@ -1,5 +1,13 @@
 import { Server as SocketIOServer } from 'socket.io';
-import { DEFAULT_CATEGORIES } from '../src/data/wordCategories';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const categoriesPath = path.join(__dirname, 'categories.json');
+const DEFAULT_CATEGORIES = JSON.parse(fs.readFileSync(categoriesPath, 'utf-8'));
 
 export function setupSocketServer(httpServer) {
   const io = new SocketIOServer(httpServer, {

@@ -18,11 +18,11 @@ app.use(express.static(distPath));
 // Attach Socket.io server
 setupSocketServer(server);
 
-// SPA fallback to index.html
-app.get('*', (req, res) => {
+// SPA fallback to index.html for all non-static routes
+app.use((req, res) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`Server successfully listening on port ${PORT}`);
 });
