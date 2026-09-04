@@ -137,7 +137,7 @@ export function setupSocketServer(httpServer) {
 
       if (imposterIndices.has(idx)) {
         role = 'imposter';
-        word = room.settings.gameMode === 'undercover' ? randomWordPair.imposterWord : '??? (You are the Imposter)';
+        word = room.settings.gameMode === 'undercover' ? randomWordPair.imposterWord : '??? (You are the Bullshitter)';
         if (room.settings.enableHints && randomWordPair.hint) {
           hint = randomWordPair.hint;
         }

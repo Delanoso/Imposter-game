@@ -133,7 +133,7 @@ export const MultiplayerVotingScreen = ({
       <p className="text-xs text-slate-400 mb-3 px-1">
         {hasVoted 
           ? 'Waiting for remaining players to submit their votes...' 
-          : 'Tap the player you believe is the Imposter:'}
+          : 'Tap the player you believe is the Bullshitter:'}
       </p>
 
       {/* Target Candidates List */}

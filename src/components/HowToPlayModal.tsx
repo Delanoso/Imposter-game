@@ -32,7 +32,7 @@ export const HowToPlayModal = ({ onClose }: HowToPlayModalProps) => {
             <div>
               <h4 className="font-bold text-white text-sm mb-0.5">Pass the Phone & View Secret Roles</h4>
               <p className="text-xs text-slate-400">
-                Each player secretly peeks at their card. Everyone sees the exact same secret word — except the <strong className="text-rose-400">Imposter</strong>!
+                Each player secretly peeks at their card. Everyone sees the exact same secret word — except the <strong className="text-rose-400">Bullshitter</strong>!
               </p>
             </div>
           </div>
@@ -74,9 +74,9 @@ export const HowToPlayModal = ({ onClose }: HowToPlayModalProps) => {
             <div>
               <h4 className="font-bold text-white text-sm mb-0.5">Scoring & Word Guessing</h4>
               <p className="text-xs text-slate-400">
-                • <strong>Civilians win (+2 pts)</strong> if the imposter is unmasked.<br/>
-                • <strong>Imposter wins (+3 pts)</strong> if they evade detection.<br/>
-                • If caught, the imposter can attempt to guess the secret word for a redemption win!
+                • <strong>Civilians win (+2 pts)</strong> if the bullshitter is unmasked.<br/>
+                • <strong>Bullshitter wins (+3 pts)</strong> if they evade detection.<br/>
+                • If caught, the bullshitter can attempt to guess the secret word for a redemption win!
               </p>
             </div>
           </div>

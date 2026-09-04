@@ -205,7 +205,7 @@ export function useGameEngine() {
         if (settings.gameMode === 'undercover') {
           word = randomWordPair.imposterWord;
         } else {
-          word = '??? (You are the Imposter)';
+          word = '??? (You are the Bullshitter)';
         }
         if (settings.enableHintsForImposter && randomWordPair.hint) {
           hint = randomWordPair.hint;

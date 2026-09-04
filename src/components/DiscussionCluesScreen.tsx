@@ -162,7 +162,7 @@ export const DiscussionCluesScreen = ({
         </div>
         <p>• Say exactly <strong>ONE WORD</strong> only.</p>
         <p>• No repeating or saying the secret word directly.</p>
-        <p>• Imposters should mimic tone and blend in!</p>
+        <p>• Bullshitters should mimic tone and blend in!</p>
       </div>
 
       {/* Floating Bottom Action */}
@@ -172,7 +172,7 @@ export const DiscussionCluesScreen = ({
           className="w-full py-4 rounded-2xl bg-gradient-to-r from-rose-600 via-purple-600 to-indigo-600 text-white font-extrabold text-base shadow-xl shadow-purple-600/40 hover:scale-[1.02] active:scale-[0.98] transition flex items-center justify-center gap-2 border border-white/20"
         >
           <Vote className="w-5 h-5" />
-          <span>VOTE WHO IS THE IMPOSTER</span>
+          <span>VOTE WHO IS THE BULLSHITTER</span>
         </button>
       </div>
     </div>

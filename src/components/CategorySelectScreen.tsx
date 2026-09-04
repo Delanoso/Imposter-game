@@ -225,7 +225,7 @@ export const CategorySelectScreen = ({
             <div>
               <div className="flex items-center justify-between mb-1">
                 <label className="text-xs font-semibold text-slate-400">Words (One per line)</label>
-                <span className="text-[10px] text-slate-500">Format: Civilian / Imposter</span>
+                <span className="text-[10px] text-slate-500">Format: Civilian / Bullshitter</span>
               </div>
               <textarea
                 rows={5}

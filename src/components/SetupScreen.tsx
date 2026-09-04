@@ -190,12 +190,12 @@ export const SetupScreen = ({
           )}
         </div>
 
-        {/* Imposter Count */}
+        {/* Imposter / Bullshitter Count */}
         <div className="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/80 shadow-md">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-2">
               <ShieldAlert className="w-5 h-5 text-rose-400" />
-              <span className="font-semibold text-white">Number of Imposters</span>
+              <span className="font-semibold text-white">Number of Bullshitters</span>
             </div>
             <span className="text-lg font-bold text-rose-300">{settings.imposterCount}</span>
           </div>
@@ -217,7 +217,7 @@ export const SetupScreen = ({
                       : 'bg-slate-900/80 border-slate-700 text-slate-300 hover:text-white'
                   }`}
                 >
-                  <span>{num} {num === 1 ? 'Imposter' : 'Imposters'}</span>
+                  <span>{num} {num === 1 ? 'Bullshitter' : 'Bullshitters'}</span>
                   {disabled && <span className="text-[10px] font-normal">Min {num * 2 + 1} players</span>}
                 </button>
               );
@@ -242,7 +242,7 @@ export const SetupScreen = ({
               }`}
             >
               <span className="font-bold text-sm text-indigo-300">Classic</span>
-              <span className="text-xs text-slate-400 mt-1">Imposter sees no word and must bluff blindly.</span>
+              <span className="text-xs text-slate-400 mt-1">Bullshitter sees no word and must bluff blindly.</span>
             </button>
 
             <button
@@ -254,7 +254,7 @@ export const SetupScreen = ({
               }`}
             >
               <span className="font-bold text-sm text-purple-300">Undercover</span>
-              <span className="text-xs text-slate-400 mt-1">Imposter gets a similar word (e.g. Pizza vs Burger).</span>
+              <span className="text-xs text-slate-400 mt-1">Bullshitter gets a similar word (e.g. Pizza vs Burger).</span>
             </button>
           </div>
 
@@ -262,8 +262,8 @@ export const SetupScreen = ({
           <div className="mt-4 pt-4 border-t border-slate-700/60 flex flex-col gap-3">
             <label className="flex items-center justify-between cursor-pointer">
               <div>
-                <div className="text-sm font-medium text-slate-200">Helpful Hint for Imposter</div>
-                <div className="text-xs text-slate-400">Gives imposter a broad category hint (e.g. "Fast food")</div>
+                <div className="text-sm font-medium text-slate-200">Helpful Hint for Bullshitter</div>
+                <div className="text-xs text-slate-400">Gives the bullshitter a broad category hint (e.g. "Fast food")</div>
               </div>
               <input
                 type="checkbox"

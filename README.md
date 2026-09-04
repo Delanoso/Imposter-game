@@ -9,10 +9,10 @@ A high-polish, feature-rich web party game. Gather your friends, pass one phone 
 - 🌐 **Online Multiplayer (Play on Own Phones)**: Create a room, share a link / QR code, and play synchronized rounds across everyone's personal devices with real-time Socket.io state sync!
 - 🎮 **Pass & Play (1 Phone, 3-20 Players)**: Seamless local party play designed specifically for group game nights.
 - 🎭 **Multiple Game Modes**:
-  - **Classic**: Imposter receives no secret word and must bluff blindly.
-  - **Undercover**: Imposter receives a slightly different related word (e.g. *Pizza* vs *Burger*).
+  - **Classic**: Bullshitter receives no secret word and must bluff blindly.
+  - **Undercover**: Bullshitter receives a slightly different related word (e.g. *Pizza* vs *Burger*).
   - **Confused Innocent Role**: An innocent player unknowingly receives an alternate word, adding hilarious chaos.
-- 💡 **Helpful Hints**: Option to grant imposters a broad category hint so they can craft believable clues.
+- 💡 **Helpful Hints**: Option to grant the bullshitter a broad category hint so they can craft believable clues.
 - 📦 **Rich Word Categories**:
   - 🍕 Food & Drinks
   - 🦁 Animals & Nature
@@ -25,9 +25,9 @@ A high-polish, feature-rich web party game. Gather your friends, pass one phone 
 - 🛠️ **Custom Word Packs Creator**: Easily create and save custom categories and secret word pairs.
 - ⏱️ **Clue Order & Discussion Timer**: Automatic randomized first speaker, speaking order badges, and interactive countdown timer.
 - 🗳️ **In-App Secret Voting & Group Consensus**: Vote privately on the device or eliminate players with quick group consensus.
-- 👑 **Imposter Redemption Guessing**: If unmasked, the imposter can attempt to guess the secret word to steal victory.
+- 👑 **Bullshitter Redemption Guessing**: If unmasked, the bullshitter can attempt to guess the secret word to steal victory.
 - 🏆 **Party Leaderboard & Persistent Scores**: Tracks scores across multiple rounds using browser local storage.
-- 🔊 **Synthesized Web Audio & Haptics**: Rich sound effects for clicks, card reveals, imposter stingers, timer countdowns, buzzer, and victory fanfare (plus confetti!).
+- 🔊 **Synthesized Web Audio & Haptics**: Rich sound effects for clicks, card reveals, timer countdowns, buzzer, and victory fanfare (plus confetti!).
 - 📱 **Mobile First & Responsive**: Optimized for iOS/Android smartphones, tablets, and desktop browsers.
 
 ---
@@ -88,8 +88,8 @@ Because this app includes live **Socket.io** online multiplayer, you can host it
 1. **Setup**: Choose player count (3–20), select avatars & names, and choose game mode & categories.
 2. **Pass & Peek**: Pass the device to each player. Tap the card to secretly peek at your word.
 3. **Clues**: In speaking order, each player says **ONE WORD** related to the secret word.
-4. **Debate & Vote**: When time runs out, discuss and vote on who is the imposter!
+4. **Debate & Vote**: When time runs out, discuss and vote on who is the bullshitter!
 5. **Score**:
-   - Civilians earn **+2 points** if the imposter is caught.
-   - The imposter earns **+3 points** if they survive undetected.
-   - If caught, the imposter can attempt to guess the secret word for redemption.
+   - Civilians earn **+2 points** if the bullshitter is caught.
+   - The bullshitter earns **+3 points** if they survive undetected.
+   - If caught, the bullshitter can attempt to guess the secret word for redemption.

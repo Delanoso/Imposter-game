@@ -78,7 +78,7 @@ export const RoleRevealScreen = ({
                     <ShieldAlert className="w-9 h-9 text-rose-400 animate-pulse" />
                   </div>
                   <h3 className="text-rose-400 font-extrabold text-2xl tracking-wider uppercase">
-                    YOU ARE THE IMPOSTER!
+                    YOU ARE THE BULLSHITTER!
                   </h3>
                   {player.word && player.word.includes('???') ? (
                     <p className="text-xs text-slate-400 mt-2 max-w-[200px]">

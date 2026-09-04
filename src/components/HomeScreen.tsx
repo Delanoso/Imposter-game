@@ -91,7 +91,7 @@ export const HomeScreen = ({
           </span>
           <span className="px-3 py-1 rounded-full bg-rose-950/60 border border-rose-700/40 text-rose-300 text-xs font-semibold flex items-center gap-1">
             <ShieldAlert className="w-3 h-3" />
-            {settings.imposterCount} Imposter{settings.imposterCount > 1 ? 's' : ''}
+            {settings.imposterCount} Bullshitter{settings.imposterCount > 1 ? 's' : ''}
           </span>
           <span className="px-3 py-1 rounded-full bg-purple-950/60 border border-purple-700/40 text-purple-300 text-xs font-semibold capitalize flex items-center gap-1">
             <Sparkles className="w-3 h-3" />

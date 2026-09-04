@@ -154,7 +154,7 @@ export const MultiplayerCluesScreen = ({
           Clue Giving Rules:
         </div>
         <p>• Speak out loud on your turn: exactly <strong>ONE WORD</strong> only.</p>
-        <p>• Imposter must blend in and mimic tone!</p>
+        <p>• Bullshitter must blend in and mimic tone!</p>
       </div>
 
       {/* Floating Bottom Action */}

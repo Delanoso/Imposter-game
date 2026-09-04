@@ -44,15 +44,15 @@ export const MultiplayerResultsScreen = ({
         </div>
 
         <h2 className="text-2xl font-black text-white tracking-wide uppercase">
-          {civiliansWin ? 'CIVILIANS WIN!' : 'IMPOSTER WINS!'}
+          {civiliansWin ? 'CIVILIANS WIN!' : 'BULLSHITTER WINS!'}
         </h2>
         
         <p className="text-xs text-slate-300 mt-1 max-w-xs mx-auto">
           {civiliansWin 
-            ? 'The group successfully caught the imposter!'
+            ? 'The group successfully caught the bullshitter!'
             : isImposterCaught
-            ? 'The imposter guessed the secret word and stole victory!'
-            : 'The imposter deceived everyone and got away with it!'}
+            ? 'The bullshitter guessed the secret word and stole victory!'
+            : 'The bullshitter deceived everyone and got away with it!'}
         </p>
 
         {/* Secret Word Reveal Box */}
@@ -113,7 +113,7 @@ export const MultiplayerResultsScreen = ({
                     <span className={`text-xs font-semibold ${
                       isImp ? 'text-rose-400' : isConf ? 'text-purple-400' : 'text-slate-400'
                     }`}>
-                      {isImp ? '😈 Imposter' : isConf ? '😵 Confused Innocent' : '🛡️ Civilian'}
+                      {isImp ? '😈 Bullshitter' : isConf ? '😵 Confused Innocent' : '🛡️ Civilian'}
                     </span>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ export const MultiplayerResultsScreen = ({
         </div>
       </div>
 
-      {/* Imposter Bonus Guessing (for caught imposter on their phone) */}
+      {/* Bullshitter Bonus Guessing (for caught bullshitter on their phone) */}
       {isImposter && isImposterCaught && (
         <div className="p-4 rounded-2xl bg-slate-900 border border-slate-700/80 shadow-lg mb-6">
           <div className="flex items-center gap-2 mb-2">

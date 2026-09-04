@@ -202,7 +202,7 @@ export const MultiplayerLobby = ({
           </span>
           <span className="text-rose-400 font-semibold flex items-center gap-1">
             <ShieldAlert className="w-3.5 h-3.5" />
-            {roomState.settings.imposterCount} Imposter{roomState.settings.imposterCount > 1 ? 's' : ''}
+            {roomState.settings.imposterCount} Bullshitter{roomState.settings.imposterCount > 1 ? 's' : ''}
           </span>
         </div>
         <div className="text-[11px] text-slate-400">
@@ -272,9 +272,9 @@ export const MultiplayerLobby = ({
               </button>
             </div>
 
-            {/* Imposter count */}
+            {/* Bullshitter count */}
             <div>
-              <label className="text-xs font-semibold text-slate-300 block mb-1.5">Number of Imposters</label>
+              <label className="text-xs font-semibold text-slate-300 block mb-1.5">Number of Bullshitters</label>
               <div className="grid grid-cols-3 gap-2">
                 {[1, 2, 3].map(num => (
                   <button
@@ -286,7 +286,7 @@ export const MultiplayerLobby = ({
                         : 'bg-slate-800 border-slate-700 text-slate-400'
                     }`}
                   >
-                    {num} Imposter{num > 1 ? 's' : ''}
+                    {num} Bullshitter{num > 1 ? 's' : ''}
                   </button>
                 ))}
               </div>
@@ -305,7 +305,7 @@ export const MultiplayerLobby = ({
                   }`}
                 >
                   <div>Classic</div>
-                  <div className="text-[10px] font-normal opacity-80">Imposter gets ???</div>
+                  <div className="text-[10px] font-normal opacity-80">Bullshitter gets ???</div>
                 </button>
                 <button
                   onClick={() => onUpdateSettings({ gameMode: 'undercover' })}
@@ -349,7 +349,7 @@ export const MultiplayerLobby = ({
             {/* Toggles */}
             <div className="flex flex-col gap-2 pt-2 border-t border-slate-800">
               <label className="flex items-center justify-between text-xs text-slate-300 cursor-pointer">
-                <span>Imposter Hints</span>
+                <span>Bullshitter Hints</span>
                 <input
                   type="checkbox"
                   checked={roomState.settings.enableHints}

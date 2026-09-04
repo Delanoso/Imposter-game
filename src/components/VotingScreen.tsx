@@ -127,7 +127,7 @@ export const VotingScreen = ({
       </div>
 
       <p className="text-xs text-slate-400 mb-3 px-1">
-        Who do you suspect is the Imposter? (Your vote is kept secret until results):
+        Who do you suspect is the Bullshitter? (Your vote is kept secret until results):
       </p>
 
       {/* Target Candidates List */}

@@ -42,15 +42,15 @@ export const ResultsScreen = ({
         </div>
 
         <h2 className="text-2xl font-black text-white tracking-wide uppercase">
-          {civiliansWin ? 'CIVILIANS WIN!' : 'IMPOSTER WINS!'}
+          {civiliansWin ? 'CIVILIANS WIN!' : 'BULLSHITTER WINS!'}
         </h2>
         
         <p className="text-xs text-slate-300 mt-1 max-w-xs mx-auto">
           {civiliansWin 
-            ? 'The group successfully caught the imposter!'
+            ? 'The group successfully caught the bullshitter!'
             : isImposterCaught
-            ? 'The imposter managed to steal the victory by guessing the secret word!'
-            : 'The imposter deceived the group and got away with it!'}
+            ? 'The bullshitter managed to steal the victory by guessing the secret word!'
+            : 'The bullshitter deceived the group and got away with it!'}
         </p>
 
         {/* Secret Word Reveal Box */}
@@ -105,7 +105,7 @@ export const ResultsScreen = ({
                     <span className={`text-xs font-semibold ${
                       isImp ? 'text-rose-400' : isConf ? 'text-purple-400' : 'text-slate-400'
                     }`}>
-                      {isImp ? '😈 Imposter' : isConf ? '😵 Confused Innocent' : '🛡️ Civilian'}
+                      {isImp ? '😈 Bullshitter' : isConf ? '😵 Confused Innocent' : '🛡️ Civilian'}
                     </span>
                   </div>
                 </div>
@@ -126,17 +126,17 @@ export const ResultsScreen = ({
         </div>
       </div>
 
-      {/* Imposter Bonus Guessing Chance (if imposter was caught) */}
+      {/* Bullshitter Bonus Guessing Chance (if bullshitter was caught) */}
       {isImposterCaught && roundData.imposterGuessedWordCorrectly === null && (
         <div className="p-4 rounded-2xl bg-slate-900 border border-slate-700/80 shadow-lg mb-6">
           <div className="flex items-center gap-2 mb-2">
             <Sparkles className="w-4 h-4 text-amber-400" />
             <h4 className="text-xs font-bold text-amber-300 uppercase tracking-wider">
-              Imposter Redemption Chance
+              Bullshitter Redemption Chance
             </h4>
           </div>
           <p className="text-xs text-slate-400 mb-3">
-            Can the imposter guess the exact secret word to steal victory?
+            Can the bullshitter guess the exact secret word to steal victory?
           </p>
 
           <div className="flex gap-2">
