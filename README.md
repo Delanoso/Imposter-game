@@ -1,4 +1,4 @@
-# Bullshitter - The Ultimate Social Deduction Word Game
+# Bullshitter - Party Game
 
 A high-polish, feature-rich web party game. Gather your friends, pass one phone around (or play on your own phones with an invite link), bluff your way through secret word clues, and vote to unmask the bullshitter!
 

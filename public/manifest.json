@@ -1,7 +1,7 @@
 {
-  "name": "Bullshitter - Word Party Game",
+  "name": "Bullshitter",
   "short_name": "Bullshitter",
-  "description": "The ultimate social deduction word party game for iPhone, Android, and Web.",
+  "description": "Party Game for iPhone, Android, and Web.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0d0f17",
