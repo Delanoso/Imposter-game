@@ -11,9 +11,16 @@ const app = express();
 const server = http.createServer(app);
 const PORT = process.env.PORT || 5173;
 
-// Serve static build files
+// Serve static build files with cache control
 const distPath = path.join(__dirname, '..', 'dist');
-app.use(express.static(distPath));
+app.use(express.static(distPath, {
+  maxAge: '1h',
+  setHeaders: (res, path) => {
+    if (path.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+  }
+}));
 
 // Attach Socket.io server
 setupSocketServer(server);
