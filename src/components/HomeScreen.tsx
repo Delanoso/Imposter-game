@@ -80,7 +80,7 @@ export const HomeScreen = ({
           BULLSHITTER
         </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-xs mt-1 font-medium">
-          Everyone knows the secret word, except one of you. Can you find who's bluffing?
+          Everyone knows the secret word, except one of you. Can you find the Bullshitter?
         </p>
 
         {/* Quick status badge */}
