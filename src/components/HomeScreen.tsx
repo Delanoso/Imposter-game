@@ -77,7 +77,7 @@ export const HomeScreen = ({
         </div>
 
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-100 to-slate-400 bg-clip-text text-transparent my-1">
-          IMPOSTER
+          BULLSHITTER
         </h1>
         <p className="text-slate-400 text-sm sm:text-base max-w-xs mt-1 font-medium">
           Everyone knows the secret word, except one of you. Can you find who's bluffing?

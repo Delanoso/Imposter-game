@@ -1,6 +1,6 @@
-# Imposter Game - The Ultimate Social Deduction Party Game
+# Bullshitter - The Ultimate Social Deduction Word Game
 
-A high-polish, feature-rich web duplicate of the viral **Imposter** party game app (Who is the Imposter / Imposter Codewords). Gather your friends, pass one phone around, bluff your way through secret word clues, and vote to unmask the imposter!
+A high-polish, feature-rich web party game. Gather your friends, pass one phone around (or play on your own phones with an invite link), bluff your way through secret word clues, and vote to unmask the bullshitter!
 
 ---
 

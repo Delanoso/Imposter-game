@@ -56,8 +56,8 @@ export const MultiplayerLobby = ({
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Join Imposter Game!',
-          text: `Join our Imposter party room! Room Code: ${roomState.roomCode}`,
+          title: 'Join Bullshitter Game!',
+          text: `Join our Bullshitter party room! Room Code: ${roomState.roomCode}`,
           url: joinUrl,
         });
       } catch {
